@@ -134,6 +134,10 @@
      `(completions-group-title ((t (:foreground ,quartz1 :background ,bg0))))
      `(completions-group-separator ((t (:foreground ,quartz1 :background ,bg0))))
 
+     `(completion-preview ((t (:foreground ,quartz0))))
+     `(completion-preview-common ((t (:foreground ,quartz0))))
+     `(completion-preview-exact ((t (:foreground ,green))))
+
      `(company-echo ((t (:foreground ,fg0))))
      `(company-echo-common ((t (:foreground ,red))))
      `(company-preview ((t (:background ,bg0-5))))
