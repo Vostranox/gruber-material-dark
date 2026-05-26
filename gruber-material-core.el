@@ -386,6 +386,9 @@
      `(magit-section-heading-selection ((t (:foreground ,wisteria))))
      `(magit-section-highlight ((t (:background ,bg1))))
      `(magit-tag ((t (:foreground ,wisteria))))
+     `(magit-diff-our-heading ((t (:foreground ,red :background ,bg1))))
+     `(magit-diff-base-heading ((t (:foreground ,wisteria :background ,bg1))))
+     `(magit-diff-their-heading ((t (:foreground ,green :background ,bg1))))
 
      `(diff-header ((t (:foreground ,fg0 :background ,bg2))))
      `(diff-error ((t (:foreground ,red :background ,bg2))))
