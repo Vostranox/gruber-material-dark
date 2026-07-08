@@ -1,14 +1,34 @@
-;;; -*- lexical-binding: t; coding: utf-8 -*-
+;;; gruber-material-dark.el --- Soft dark themes based on Gruber Darker -*- lexical-binding: t; -*-
 
-(eval-when-compile (require 'cl-lib))
+;; Copyright (C) 2025-2026 Vostranox
 
-(defun gruber-material--lookup (palette key)
+;; Author: Vostranox <vostranox@gmail.com>
+;; Maintainer: Vostranox <vostranox@gmail.com>
+;; URL: https://github.com/Vostranox/gruber-material-dark
+;; Version: 1.1
+;; Package-Requires: ((emacs "27.1"))
+;; Keywords: faces
+;; SPDX-License-Identifier: MIT
+
+;;; Commentary:
+
+;; This package provides two dark themes: `gruber-material-dark' and
+;; `gruber-material-dark-intense'.  They are softer, Material-flavored
+;; variants of Gruber Darker.
+;;
+;; Based on gruber-darker-theme by Alexey Kutepov a.k.a. rexim
+;; (https://github.com/rexim/gruber-darker-theme), itself derived from
+;; Jason Blevins' Gruber Dark theme for BBEdit.
+
+;;; Code:
+
+(defun gruber-material-dark--lookup (palette key)
+  "Return the color associated with KEY in PALETTE."
   (cdr (assq key palette)))
 
-(defun gruber-material--apply-faces (theme palette)
-  (let* ((pg (lambda (k) (gruber-material--lookup palette k)))
-         (white     (funcall pg 'gruber-material-dark-white))
-         (black     (funcall pg 'gruber-material-dark-black))
+(defun gruber-material-dark--apply-faces (theme palette)
+  "Set the face specifications of THEME using the colors in PALETTE."
+  (let* ((pg (lambda (k) (gruber-material-dark--lookup palette k)))
          (fg0       (funcall pg 'gruber-material-dark-fg0))
          (bg0       (funcall pg 'gruber-material-dark-bg0))
          (bg0-5     (funcall pg 'gruber-material-dark-bg0-5))
@@ -40,7 +60,7 @@
      `(cursor ((t (:foreground ,bg0 :background ,yellow))))
      `(hl-line ((t (:foreground unspecified :background unspecified))))
      `(vertical-border ((t (:foreground ,bg2))))
-     `(internal-border ((t (:foreground ,bg2))))
+     `(internal-border ((t (:background ,bg2))))
      `(window-divider ((t (:foreground ,bg2))))
      `(minibuffer-prompt ((t (:foreground ,niagara2 :weight bold))))
      `(secondary-selection ((t (:background ,bg1))))
@@ -141,12 +161,7 @@
      `(company-echo ((t (:foreground ,fg0))))
      `(company-echo-common ((t (:foreground ,red))))
      `(company-preview ((t (:background ,bg0-5))))
-     `(company-preview-common ((t (:foreground ,green))))
-     `(company-preview-search ((t (:foreground ,green))))
      `(company-template-field ((t (:foreground ,yellow))))
-     `(company-tooltip ((t (:background ,bg0-5))))
-     `(company-tooltip-common ((t (:foreground ,green))))
-     `(company-tooltip-common-selection ((t (:foreground ,green))))
      `(company-tooltip ((t (:background ,bg0-5))))
      `(company-tooltip-scrollbar-thumb ((t (:background ,bg0-5))))
      `(company-tooltip-scrollbar-track ((t (:background ,bg0-5))))
@@ -231,7 +246,7 @@
      `(avy-lead-face ((t (:foreground ,yellow :background ,bg2))))
      `(avy-lead-face-0 ((t (:foreground ,yellow :background ,bg2))))
      `(avy-lead-face-1 ((t (:foreground ,yellow :background ,bg2))))
-     `(avy-lead-face-2 ((t (:foreground ,yellow, :background ,bg2))))
+     `(avy-lead-face-2 ((t (:foreground ,yellow :background ,bg2))))
 
      `(dired-broken-symlink ((t (:foreground ,red :background ,bg0))))
      `(dired-directory ((t (:foreground ,quartz1 :background ,bg0))))
@@ -544,21 +559,16 @@
      `(transient-enabled-suffix ((t (:foreground ,quartz1))))
      `(transient-disabled-suffix ((t (:foreground ,bg4))))
      `(transient-separator ((t (:foreground ,bg4))))
-     `(transient-key-return ((t (:foreground ,yellow))))))
+     `(transient-key-return ((t (:foreground ,yellow)))))))
 
-  (defface mode-line-buffer-id-inactive
-    `((t (:inherit mode-line-buffer-id
-                   :foreground ,(gruber-material--lookup palette 'gruber-material-dark-quartz0)
-                   :background ,(gruber-material--lookup palette 'gruber-material-dark-bg0))))
-    "Face for buffer name in inactive windows."))
-
-(defmacro gruber-material-deftheme (name palette)
+(defmacro gruber-material-dark-deftheme (name doc palette)
+  "Define a theme named NAME with docstring DOC.
+The theme faces are built from the colors in PALETTE."
   `(progn
-     (deftheme ,name ,(format "%s" name))
-     (gruber-material--apply-faces ',name ,palette)
-     (when load-file-name
-       (add-to-list 'custom-theme-load-path
-                    (file-name-as-directory (file-name-directory load-file-name))))
+     (deftheme ,name ,doc)
+     (gruber-material-dark--apply-faces ',name ,palette)
      (provide-theme ',name)))
 
-(provide 'gruber-material-core)
+(provide 'gruber-material-dark)
+
+;;; gruber-material-dark.el ends here
