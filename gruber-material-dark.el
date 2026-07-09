@@ -330,6 +330,13 @@
      `(org-time-grid ((t (:foreground ,quartz1))))
      `(org-latex-and-related ((t (:foreground ,quartz1))))
 
+     `(markdown-ts-heading-1 ((t (:foreground ,quartz1))))
+     `(markdown-ts-heading-2 ((t (:foreground ,niagara2))))
+     `(markdown-ts-heading-3 ((t (:foreground ,wisteria))))
+     `(markdown-ts-heading-4 ((t (:foreground ,green))))
+     `(markdown-ts-heading-5 ((t (:foreground ,quartz1))))
+     `(markdown-ts-heading-6 ((t (:foreground ,niagara2))))
+
      `(markdown-header-face-1 ((t (:foreground ,quartz1))))
      `(markdown-header-face-2 ((t (:foreground ,niagara2))))
      `(markdown-header-face-3 ((t (:foreground ,wisteria))))
