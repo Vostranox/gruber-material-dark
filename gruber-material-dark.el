@@ -482,6 +482,7 @@
      `(vundo-last-saved ((t (:foreground ,red))))
 
      `(minibuffer-depth-indicator ((t (:background ,bg1))))
+     `(minibuffer-nonselected ((t (:background ,bg1))))
      `(persp-selected-face ((t (:foreground ,quartz1))))
      `(marginalia-documentation ((t (:foreground ,fg0 :italic t))))
 
