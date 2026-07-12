@@ -60,7 +60,7 @@
      `(cursor ((t (:foreground ,bg0 :background ,yellow))))
      `(hl-line ((t (:foreground unspecified :background unspecified))))
      `(vertical-border ((t (:foreground ,bg2))))
-     `(internal-border ((t (:background ,bg2))))
+     `(internal-border ((t (:background ,bg0))))
      `(window-divider ((t (:foreground ,bg2))))
      `(minibuffer-prompt ((t (:foreground ,niagara2 :weight bold))))
      `(secondary-selection ((t (:background ,bg1))))
