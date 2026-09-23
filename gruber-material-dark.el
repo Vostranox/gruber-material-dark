@@ -151,7 +151,7 @@
 
      `(completions-highlight ((t (:background ,bg1))))
      `(completions-common-part ((t (:inherit match))))
-     `(completions-annotations ((t (:foreground ,quartz1 :background ,bg0))))
+     `(completions-annotations ((t (:foreground ,quartz1))))
      `(completions-group-title ((t (:foreground ,quartz1 :background ,bg0))))
      `(completions-group-separator ((t (:foreground ,quartz1 :background ,bg0))))
      `(completions-first-difference ((t (:foreground ,yellow :weight bold))))
