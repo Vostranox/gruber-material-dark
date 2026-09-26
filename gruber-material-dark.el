@@ -158,7 +158,7 @@
 
      `(completion-preview ((t (:foreground ,quartz0))))
      `(completion-preview-common ((t (:foreground ,quartz0))))
-     `(completion-preview-exact ((t (:foreground ,green))))
+     `(completion-preview-exact ((t (:foreground ,quartz1))))
 
      `(company-echo ((t (:foreground ,fg0))))
      `(company-echo-common ((t (:foreground ,red))))
