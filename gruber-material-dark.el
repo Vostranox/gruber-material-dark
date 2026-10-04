@@ -548,6 +548,9 @@
      `(flycheck-error-list-warning ((t (:foreground ,yellow :weight bold))))
      `(flycheck-error-list-error ((t (:foreground ,red :weight bold))))
      `(flycheck-error-list-info ((t (:foreground ,niagara2 :weight bold))))
+     `(flycheck-annotate-error ((t (:inherit flycheck-error-list-error :weight normal :height 0.9))))
+     `(flycheck-annotate-warning ((t (:inherit flycheck-error-list-warning :weight normal :height 0.9))))
+     `(flycheck-annotate-info ((t (:inherit flycheck-error-list-info :weight normal :height 0.9))))
 
      `(flymake-error ((t (:underline (:style wave :color ,red)))))
      `(flymake-warning ((t (:underline (:style wave :color ,yellow)))))
